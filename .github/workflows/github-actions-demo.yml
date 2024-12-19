@@ -41,8 +41,7 @@ jobs:
         - name: Install dependencies
           run: npm ci
         - name: Run Formatter
-          run: npm run format
-          continue-on-error: true
+          run: npm run format-write
  
         - name: Check Out Repository Code
           uses: actions/checkout@v4
