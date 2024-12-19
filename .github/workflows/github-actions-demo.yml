@@ -43,10 +43,7 @@ jobs:
         - name: Run Formatter
           run: npm run format
           continue-on-error: true
-  Push:
-    runs-on: ubuntu-latest
-    needs: [Linting, Formatting]
-    steps:
+ 
       - name: Check Out Repository Code
         uses: actions/checkout@v4
       - name: Install node version 22
