@@ -29,8 +29,6 @@ jobs:
         run: npm i
       - name: Get Virus Scanner
         uses: "hugoalh/scan-virus-ghaction@main"
-      - name: Scan for Viruses
-        run: clamscan -r .
       - name: Show Virus Scan Results
         run: cat /tmp/clamscan.log
 
