@@ -1,5 +1,4 @@
 import { JetView } from 'webix-jet';
-import SidemenuView from './sidemenu/sidemenu';
 
 export default class TopView extends JetView{
     config() {

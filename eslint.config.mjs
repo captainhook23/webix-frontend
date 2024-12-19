@@ -10,7 +10,8 @@ export default [
             { 
                 ...globals.browser, 
                 ...globals.es6,
-                webix: true 
+                webix: true,
+                $$: true
             },
             parserOptions: 
             { 
