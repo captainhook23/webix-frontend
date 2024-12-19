@@ -16,6 +16,25 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  Check-Virus:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out Repository Code
+        uses: actions/checkout@v4
+      - name: Install node version 22
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm i
+      - name: Get Virus Scanner
+        uses: "hugoalh/scan-virus-ghaction@main"
+      - name: Scan for Viruses
+        run: clamscan -r .
+      - name: Show Virus Scan Results
+        run: cat /tmp/clamscan.log
+
+      
   Linting:
     runs-on: ubuntu-latest
     steps:
