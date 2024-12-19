@@ -1,5 +1,5 @@
-import { JetView, plugins } from 'webix-jet';
-import { menudata } from '../../models/menudata';
+import { JetView, plugins } from 'webix-jet'
+import { menudata } from '../../models/menudata'
 
 export default class SidemenuView extends JetView {
     config() {
@@ -9,41 +9,41 @@ export default class SidemenuView extends JetView {
                 {
                     rows: [
                         {
-                            css: "menu",
+                            css: 'menu',
                             padding: 2,
-                            view: "form",
+                            view: 'form',
                             cols: [
                                 {
-                                    view: "icon", icon: "mdi mdi-menu",
+                                    view: 'icon',
+                                    icon: 'mdi mdi-menu',
                                     click: function () {
-                                        $$("$sidebar1").toggle()
-                                    }
-                                }
-                            ]
+                                        $$('$sidebar1').toggle()
+                                    },
+                                },
+                            ],
                         },
                         {
-                            view: "sidebar",
+                            view: 'sidebar',
                             collapsed: true,
-                            position: "left",
+                            position: 'left',
                             data: menudata,
-autowidth: true,
-autoheight: true,                            
-on: {
+                            autowidth: true,
+                            autoheight: true,
+                            on: {
                                 onclick: function () {
-                                    webix.message("Clicked")
-                                }
-                            }
-                        }
-                    ]
-                }
-            ]
+                                    webix.message('Clicked')
+                                },
+                            },
+                        },
+                    ],
+                },
+            ],
         }
 
         return sidemenu
     }
 
     init() {
-        this.use(plugins.Menu, 'sidemenu');
-
+        this.use(plugins.Menu, 'sidemenu')
     }
 }

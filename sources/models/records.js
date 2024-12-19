@@ -1,4 +1,4 @@
-import webix from 'webix';
+import webix from 'webix'
 
 export const data = new webix.DataCollection({
     data: [
@@ -51,4 +51,4 @@ export const data = new webix.DataCollection({
             rank: 6,
         },
     ],
-});
+})

@@ -59,4 +59,4 @@ export const menudata = [
         ],
     },
     { id: 'demo', icon: 'mdi mdi-book', value: 'Documentation' },
-];
+]
