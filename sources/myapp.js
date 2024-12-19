@@ -5,7 +5,7 @@ import { JetApp, EmptyRouter, HashRouter, plugins } from 'webix-jet'
 // dynamic import of views
 const modules = import.meta.glob('./views/**/*.js')
 const views = (name) => modules[`./views/${name}.js`]().then((x) => x.default)
-console.log('Hallo')
+
 // locales, optional
 const locales = import.meta.glob('./locales/*.js')
 const words = (name) => locales[`./locales/${name}.js`]().then((x) => x.default)
