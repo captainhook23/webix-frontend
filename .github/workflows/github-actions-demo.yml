@@ -44,24 +44,24 @@ jobs:
           run: npm run format
           continue-on-error: true
  
-      - name: Check Out Repository Code
-        uses: actions/checkout@v4
-      - name: Install node version 22
-        uses: actions/setup-node@v2
-        with:
-          node-version: '22'
-      - name: Install dependencies
-        run: npm ci
-      - name: Push changes
-        run: |
-          git config --global user.email "sven.lussmann@gmail.com"
-          git config --global user.name "Sven Lussmann"
-          git add .
-          if [ -n "$(git status --porcelain)" ]; then
-            git commit -m "Automated code formatting"
-            git push
-          else
-            echo "No changes to commit"
-          fi
+        - name: Check Out Repository Code
+          uses: actions/checkout@v4
+        - name: Install node version 22
+          uses: actions/setup-node@v2
+          with:
+            node-version: '22'
+        - name: Install dependencies
+          run: npm ci
+        - name: Push changes
+          run: |
+            git config --global user.email "sven.lussmann@gmail.com"
+            git config --global user.name "Sven Lussmann"
+            git add .
+            if [ -n "$(git status --porcelain)" ]; then
+              git commit -m "Automated code formatting"
+              git push
+            else
+              echo "No changes to commit"
+            fi
 
       
